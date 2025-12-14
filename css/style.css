@@ -1,0 +1,446 @@
+/* Enterprise Rule Manager - Professional Styling */
+:root {
+  /* Wells Fargo inspired palette */
+  --primary: #D71E28; /* WF Red */
+  --primary-dark: #A11217;
+  --primary-light: #FDE9EA;
+  --primary-contrast: #FFFFFF;
+  --text: #1F2937;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+  --bg: #FFFFFF;
+  --bg-subtle: #F9FAFB;
+  --bg-lighter: #F3F4F6;
+  --border: #E5E7EB;
+  --border-light: #F0F0F0;
+  --focus: #D71E28;
+  --success: #1F8A70;
+  --success-light: #E6F6EE;
+  --warning: #B7791F;
+  --warning-light: #FFF4E5;
+  --error: #C81E1E;
+  --error-light: #FDE9EA;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+}
+
+/* Global styles */
+html, body, [data-testid="stAppViewContainer"] {
+  color: var(--text);
+  background-color: #FFFFFF;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+
+/* Remove default spacing */
+.block-container {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  background-color: #FFFFFF;
+}
+
+/* Prevent sidebar overlap on main content */
+[data-testid="stMainBlockContainer"] {
+  position: relative;
+  z-index: 1;
+}
+
+/* Sidebar styling */
+section[data-testid="stSidebar"] {
+  background: var(--bg-subtle);
+  border-right: 1px solid var(--border);
+}
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* Buttons and form elements */
+button, [data-testid="baseButton-primary"],
+[data-testid="baseButton-secondary"] {
+  transition: var(--transition);
+  border-radius: var(--radius-md);
+}
+
+button:hover,
+[data-testid="baseButton-primary"]:hover,
+[data-testid="baseButton-secondary"]:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Input styling */
+input, textarea, select {
+  border-color: var(--border) !important;
+  border-radius: var(--radius-md) !important;
+  transition: var(--transition) !important;
+  font-size: 14px;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px var(--primary-light) !important;
+  outline: none !important;
+}
+
+/* Labels */
+label {
+  font-weight: 500;
+  color: var(--text);
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+
+/* Sidebar styling */
+section[data-testid="stSidebar"] {
+  background: var(--bg-subtle);
+  border-right: 1px solid var(--border);
+}
+
+section[data-testid="stSidebar"] .stMarkdown {
+  padding: 0;
+}
+
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] h4 {
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+/* Menu items styling */
+.streamlit-expanderHeader {
+  background-color: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  border: none;
+}
+
+.streamlit-expanderHeader:hover {
+  background-color: var(--bg-lighter);
+}
+
+/* Alerts and messages */
+[data-testid="stAlert"] {
+  border-radius: var(--radius-lg);
+  border: 1px solid;
+  padding: 16px;
+  background-color: white;
+}
+
+[data-testid="stAlert"][data-test-color="blue"] {
+  border-color: #D1E7FF;
+  background-color: #F0F8FF;
+}
+
+[data-testid="stAlert"][data-test-color="green"] {
+  border-color: #D4EDDA;
+  background-color: #F0F9F5;
+}
+
+[data-testid="stAlert"][data-test-color="orange"] {
+  border-color: #FFE4B5;
+  background-color: #FFFAF0;
+}
+
+[data-testid="stAlert"][data-test-color="red"] {
+  border-color: #FADBD8;
+  background-color: #FDEDEC;
+}
+
+/* Cards and containers */
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Dataframe styling */
+[data-testid="stDataFrame"] table {
+  font-size: 13px;
+  border-collapse: collapse;
+}
+
+[data-testid="stDataFrame"] th {
+  background-color: var(--bg-lighter);
+  color: var(--text);
+  font-weight: 600;
+  padding: 12px;
+  border-bottom: 2px solid var(--border);
+  text-align: left;
+}
+
+[data-testid="stDataFrame"] td {
+  padding: 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+[data-testid="stDataFrame"] tr:hover {
+  background-color: var(--bg-subtle);
+}
+
+/* --- Connection Manager (scoped) --- */
+.cm-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: #FFFFFF;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.cm-table-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--bg-lighter);
+  border-bottom: 2px solid var(--border);
+}
+
+.cm-cell {
+  padding: 12px 16px;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.cm-name {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.cm-cell:hover {
+  background: #FAFAFA;
+}
+
+.cm-active-row {
+  background: #FFF8F8;
+  border-left: 3px solid var(--primary);
+}
+
+.cm-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  background: var(--bg-subtle);
+}
+
+.cm-badge-active {
+  color: var(--primary);
+  background: var(--primary-light);
+  border-color: rgba(215, 30, 40, 0.25);
+}
+
+.cm-form-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: #FFFFFF;
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Button intents within Connection Manager */
+.cm-danger .stButton > button {
+  background: #FFFFFF;
+  color: var(--error);
+  border: 1px solid var(--error);
+}
+
+.cm-danger .stButton > button:hover {
+  background: var(--error-light);
+}
+
+.cm-confirm .cm-yes .stButton > button {
+  background: var(--error);
+  color: #FFFFFF;
+  border: 1px solid var(--error);
+}
+
+.cm-confirm .cm-yes .stButton > button:hover {
+  filter: brightness(0.95);
+}
+
+.cm-confirm .cm-no .stButton > button {
+  background: #FFFFFF;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.cm-confirm .cm-no .stButton > button:hover {
+  background: #F7F7F7;
+}
+
+/* Table button containers - ensure full height and center alignment */
+.stColumn > div[data-testid="column"] > div {
+  height: 100%;
+}
+
+[data-testid="stButton"] {
+  width: 100%;
+}
+
+/* Dividers */
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 16px 0;
+  opacity: 0.5;
+}
+
+/* Pills/badges */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.pill-success {
+  background: var(--success-light);
+  color: var(--success);
+}
+
+.pill-warning {
+  background: var(--warning-light);
+  color: var(--warning);
+}
+
+.pill-error {
+  background: var(--error-light);
+  color: var(--error);
+}
+
+.pill-primary {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+/* Metric styling */
+[data-testid="metricDeltaContainer"] {
+  display: flex;
+  gap: 8px;
+}
+
+/* Expander styling */
+[data-testid="stExpander"] {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+[data-testid="stExpander"] button {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Columns spacing */
+[data-testid="column"] {
+  padding: 0 8px;
+}
+
+[data-testid="column"]:first-child {
+  padding-left: 0;
+}
+
+[data-testid="column"]:last-child {
+  padding-right: 0;
+}
+
+/* Focus visible for accessibility */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Scrollbar styling (Webkit browsers) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-lighter);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-testid="stAlert"] {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Print styles */
+@media print {
+  section[data-testid="stSidebar"],
+  [data-testid="stToolbar"] {
+    display: none;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  [data-testid="stDataFrame"] table {
+    font-size: 12px;
+  }
+
+  [data-testid="stDataFrame"] th,
+  [data-testid="stDataFrame"] td {
+    padding: 8px;
+  }
+}
